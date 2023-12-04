@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,25 @@ namespace ca2
     /// </summary>
     public partial class MainWindow : Window
     {
+        Team t1 = new Team() { Name = "France" };
+        Team t2 = new Team() { Name = "Italy" };
+        Team t3 = new Team() { Name = "Spain" };
+
+        // French players
+        Player p1 = new Player() { Name = "Marie", ResultRecord = "WWDDL" };
+        Player p2 = new Player() { Name = "Claude", ResultRecord = "DDDLW" };
+        Player p3 = new Player() { Name = "Antoine", ResultRecord = "LWDLW" };
+
+        // Italian players
+        Player p4 = new Player() { Name = "Marco", ResultRecord = "WWDLL" };
+        Player p5 = new Player() { Name = "Giovanni", ResultRecord = "LLLLD" };
+        Player p6 = new Player() { Name = "Valentina", ResultRecord = "DLWWW" };
+
+        // Spanish players
+        Player p7 = new Player() { Name = "Maria", ResultRecord = "WWWWW" };
+        Player p8 = new Player() { Name = "Jose", ResultRecord = "LLLLL" };
+        Player p9 = new Player() { Name = "Pablo", ResultRecord = "DDDDD" };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,35 +49,202 @@ namespace ca2
 
         public void GetData()
         {
-            Team t1 = new Team() { Name = "France" };
             LBXTeams.Items.Add(t1.Name);
-            Team t2 = new Team() { Name = "Italy" };
             LBXTeams.Items.Add(t2.Name);
-            Team t3 = new Team() { Name = "Spain" };
             LBXTeams.Items.Add(t3.Name);
-            //French players
-            Player p1 = new Player() { Name = "Marie", ResultRecord = "WWDDL" };
-            Player p2 = new Player() { Name = "Claude", ResultRecord = "DDDLW" };
-            Player p3 = new Player() { Name = "Antoine", ResultRecord = "LWDLW" };
-       
-            //Italian players
-            Player p4 = new Player() { Name = "Marco", ResultRecord = "WWDLL" };
-            Player p5 = new Player() { Name = "Giovanni", ResultRecord = "LLLLD" };
-            Player p6 = new Player() { Name = "Valentina", ResultRecord = "DLWWW" };
 
-            //Spanish players
-            Player p7 = new Player() { Name = "Maria", ResultRecord = "WWWWW" };
-            Player p8 = new Player() { Name = "Jose", ResultRecord = "LLLLL" };
-            Player p9 = new Player() { Name = "Pablo", ResultRecord = "DDDDD" };
-            LBXPlayers.Items.Add(p1.Name + p1.ResultRecord);
-            LBXPlayers.Items.Add(p2.Name + p2.ResultRecord);
-            LBXPlayers.Items.Add(p3.Name + p3.ResultRecord);
-            LBXPlayers.Items.Add(p4.Name + p4.ResultRecord);
-            LBXPlayers.Items.Add(p5.Name + p5.ResultRecord);
-            LBXPlayers.Items.Add(p6.Name + p6.ResultRecord);
-            LBXPlayers.Items.Add(p7.Name + p7.ResultRecord);
-            LBXPlayers.Items.Add(p8.Name + p8.ResultRecord);
-            LBXPlayers.Items.Add(p9.Name + p9.ResultRecord);
+            t1.Players.Add(p1);
+            t1.Players.Add(p2);
+            t1.Players.Add(p3);
+
+            t2.Players.Add(p4);
+            t2.Players.Add(p5);
+            t2.Players.Add(p6);
+
+            t3.Players.Add(p7);
+            t3.Players.Add(p8);
+            t3.Players.Add(p9);
+        }
+
+        private void LBXTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Get the selected team
+            string selectedTeam = LBXTeams.SelectedItem as string;
+
+            // Display players of the selected team
+            if (selectedTeam == t1.Name)
+            {
+                List<Player> players = t1.Players;
+                LBXPlayers.Items.Clear(); // Clear existing items
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t2.Name)
+            {
+                List<Player> players = t2.Players;
+                LBXPlayers.Items.Clear(); // Clear existing items
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t3.Name)
+            {
+                List<Player> players = t3.Players;
+                LBXPlayers.Items.Clear(); // Clear existing items
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else
+            {
+                // Clear LBXPlayers if no team is selected
+                LBXPlayers.Items.Clear();
+            }
+        }
+
+        private void BTNWin_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the selected team
+            string selectedTeam = LBXTeams.SelectedItem as string;
+
+            // Display players of the selected team
+            if (selectedTeam == t1.Name)
+            {
+                p1.ResultRecord += "W";
+                p2.ResultRecord += "W";
+                p3.ResultRecord += "W";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t1.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t2.Name)
+            {
+                p4.ResultRecord += "W";
+                p5.ResultRecord += "W";
+                p6.ResultRecord += "W";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t2.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t3.Name)
+            {
+                p7.ResultRecord += "W";
+                p8.ResultRecord += "W";
+                p9.ResultRecord += "W";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t3.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+        }
+
+        private void BTNDraw_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the selected team
+            string selectedTeam = LBXTeams.SelectedItem as string;
+
+            // Display players of the selected team
+            if (selectedTeam == t1.Name)
+            {
+                p1.ResultRecord += "D";
+                p2.ResultRecord += "D";
+                p3.ResultRecord += "D";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t1.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t2.Name)
+            {
+                p4.ResultRecord += "D";
+                p5.ResultRecord += "D";
+                p6.ResultRecord += "D";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t2.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t3.Name)
+            {
+                p7.ResultRecord += "D";
+                p8.ResultRecord += "D";
+                p9.ResultRecord += "D";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t3.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+        }
+
+        private void BTNLose_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the selected team
+            string selectedTeam = LBXTeams.SelectedItem as string;
+
+            // Display players of the selected team
+            if (selectedTeam == t1.Name)
+            {
+                p1.ResultRecord += "L";
+                p2.ResultRecord += "L";
+                p3.ResultRecord += "L";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t1.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t2.Name)
+            {
+                p4.ResultRecord += "L";
+                p5.ResultRecord += "L";
+                p6.ResultRecord += "L";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t2.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
+            else if (selectedTeam == t3.Name)
+            {
+                p7.ResultRecord += "L";
+                p8.ResultRecord += "L";
+                p9.ResultRecord += "L";
+
+                LBXPlayers.Items.Clear();
+                List<Player> players = t3.Players;
+                foreach (Player player in players)
+                {
+                    LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord);
+                }
+            }
         }
     }
 }

@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="LBXTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="69,144,562,144"/>
+        <ListBox x:Name="LBXTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="69,144,562,144" SelectionChanged="LBXTeams_SelectionChanged"/>
         <ListBox x:Name="LBXPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="451,144,135,153"/>
-        <Button x:Name="BTNWin" Content="win" Margin="679,323,18,92"/>
-        <Button x:Name="BTNLose" Content="lose" Margin="679,275,18,140"/>
-        <Button x:Name="BTNDraw" Content="draw" Margin="679,299,18,116"/>
+        <Button x:Name="BTNWin" Content="win" Margin="679,323,18,92" Click="BTNWin_Click"/>
+        <Button x:Name="BTNLose" Content="lose" Margin="679,275,18,140" Click="BTNLose_Click"/>
+        <Button x:Name="BTNDraw" Content="draw" Margin="679,299,18,116" Click="BTNDraw_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="694,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Record Result"/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="694,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Player Rating"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="451,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Players"/></TextBlock>
