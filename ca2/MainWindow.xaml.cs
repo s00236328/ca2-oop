@@ -23,6 +23,17 @@ namespace ca2
         public MainWindow()
         {
             InitializeComponent();
+            GetData();
+        }
+
+        public void GetData()
+        {
+            Team t1 = new Team() { Name = "France" };
+            LBXTeams.Items.Add(t1.Name);
+            Team t2 = new Team() { Name = "Italy" };
+            LBXTeams.Items.Add(t2.Name);
+            Team t3 = new Team() { Name = "Spain" };
+            LBXTeams.Items.Add(t3.Name);
         }
     }
 }

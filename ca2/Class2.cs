@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Teams
+public class Team
 {
-	public Teams()
-	{
-		string Name;
-        List<Player> Players = new List<Player>();
 
-            
-    }
+	public string Name { get; set; }
+    public List<Player> Players = new List<Player>();
+
+    public Team()
+    { }
 }
