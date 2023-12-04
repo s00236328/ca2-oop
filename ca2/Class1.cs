@@ -3,7 +3,7 @@
 public class Player
 {
 		public string Name { get; set; }
-		public string RecordResult { get; set; }
+		public string ResultRecord { get; set; }
 
 	public Player()
 	{
