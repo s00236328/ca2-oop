@@ -149,14 +149,14 @@ namespace ca2
             {
                 if (D == 'D')
                 {
-                    p1.Rating ++;
+                    p1.Rating++;
                 }
             }
             foreach (char D in p2.ResultRecord)
             {
                 if (D == 'D')
                 {
-                    p2.Rating ++;
+                    p2.Rating++;
                 }
             }
             foreach (char D in p3.ResultRecord)
@@ -212,11 +212,19 @@ namespace ca2
             t1.Rating = p1.Rating + p2.Rating + p3.Rating;
             t2.Rating = p4.Rating + p5.Rating + p6.Rating;
             t3.Rating = p7.Rating + p8.Rating + p9.Rating;
+
+            List<Team> teams = new List<Team> { t1, t2, t3 };
+
+            // Sort the list of teams based on their ratings
+            teams.Sort();
+            LBXTeams.Items.Clear();
+            LBXTeams.Items.Add(teams[2].Name);
+            LBXTeams.Items.Add(teams[1].Name);
+            LBXTeams.Items.Add(teams[0].Name);
         }
 
         private void LBXTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Calculate();
             // Get the selected team
             string selectedTeam = LBXTeams.SelectedItem as string;
 
