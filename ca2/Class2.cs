@@ -6,6 +6,7 @@ public class Team
 
 	public string Name { get; set; }
     public List<Player> Players = new List<Player>();
+    public int Rating;
 
     public Team()
     { }

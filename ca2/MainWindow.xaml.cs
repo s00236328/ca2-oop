@@ -23,9 +23,9 @@ namespace ca2
     /// </summary>
     public partial class MainWindow : Window
     {
-        Team t1 = new Team() { Name = "France" };
-        Team t2 = new Team() { Name = "Italy" };
-        Team t3 = new Team() { Name = "Spain" };
+        Team t1 = new Team() { Name = "France", Rating = 0 };
+        Team t2 = new Team() { Name = "Italy", Rating = 0 };
+        Team t3 = new Team() { Name = "Spain", Rating = 0 };
 
         // French players
         Player p1 = new Player() { Name = "Marie", ResultRecord = "WWDDL", Rating = 0 };
@@ -208,6 +208,10 @@ namespace ca2
                     p9.Rating++;
                 }
             }
+
+            t1.Rating = p1.Rating + p2.Rating + p3.Rating;
+            t2.Rating = p4.Rating + p5.Rating + p6.Rating;
+            t3.Rating = p7.Rating + p8.Rating + p9.Rating;
         }
 
         private void LBXTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -221,6 +225,7 @@ namespace ca2
             {
                 List<Player> players = t1.Players;
                 LBXPlayers.Items.Clear(); // Clear existing items
+                LBXPlayers.Items.Add("Team Rating: " + t1.Rating);
                 foreach (Player player in players)
                 {
                     LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord + " - " + player.Rating);
@@ -230,6 +235,7 @@ namespace ca2
             {
                 List<Player> players = t2.Players;
                 LBXPlayers.Items.Clear(); // Clear existing items
+                LBXPlayers.Items.Add("Team Rating: " + t2.Rating);
                 foreach (Player player in players)
                 {
                     LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord + " - " + player.Rating);
@@ -239,6 +245,7 @@ namespace ca2
             {
                 List<Player> players = t3.Players;
                 LBXPlayers.Items.Clear(); // Clear existing items
+                LBXPlayers.Items.Add("Team Rating: " + t3.Rating);
                 foreach (Player player in players)
                 {
                     LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord + " - " + player.Rating);
@@ -268,6 +275,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t1.Rating);
                 List<Player> players = t1.Players;
                 foreach (Player player in players)
                 {
@@ -285,6 +293,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t2.Rating);
                 List<Player> players = t2.Players;
                 foreach (Player player in players)
                 {
@@ -302,6 +311,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t3.Rating);
                 List<Player> players = t3.Players;
                 foreach (Player player in players)
                 {
@@ -327,6 +337,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t1.Rating);
                 List<Player> players = t1.Players;
                 foreach (Player player in players)
                 {
@@ -344,6 +355,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t2.Rating);
                 List<Player> players = t2.Players;
                 foreach (Player player in players)
                 {
@@ -361,6 +373,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t3.Rating);
                 List<Player> players = t3.Players;
                 foreach (Player player in players)
                 {
@@ -386,6 +399,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t1.Rating);
                 List<Player> players = t1.Players;
                 foreach (Player player in players)
                 {
@@ -403,6 +417,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t2.Rating);
                 List<Player> players = t2.Players;
                 foreach (Player player in players)
                 {
@@ -420,6 +435,7 @@ namespace ca2
                 Calculate();
 
                 LBXPlayers.Items.Clear();
+                LBXPlayers.Items.Add("Team Rating: " + t3.Rating);
                 List<Player> players = t3.Players;
                 foreach (Player player in players)
                 {
