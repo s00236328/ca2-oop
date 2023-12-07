@@ -114,6 +114,9 @@ namespace ca2
             // Display players of the selected team
             if (selectedTeam == t1.Name)
             {
+                p1.ResultRecord = p1.ResultRecord.Remove(0, 1);
+                p2.ResultRecord = p2.ResultRecord.Remove(0, 1);
+                p3.ResultRecord = p3.ResultRecord.Remove(0, 1);
                 p1.ResultRecord += "W";
                 p2.ResultRecord += "W";
                 p3.ResultRecord += "W";
@@ -127,6 +130,9 @@ namespace ca2
             }
             else if (selectedTeam == t2.Name)
             {
+                p4.ResultRecord = p4.ResultRecord.Remove(0, 1);
+                p5.ResultRecord = p5.ResultRecord.Remove(0, 1);
+                p6.ResultRecord = p6.ResultRecord.Remove(0, 1);
                 p4.ResultRecord += "W";
                 p5.ResultRecord += "W";
                 p6.ResultRecord += "W";
@@ -140,6 +146,9 @@ namespace ca2
             }
             else if (selectedTeam == t3.Name)
             {
+                p7.ResultRecord = p7.ResultRecord.Remove(0, 1);
+                p8.ResultRecord = p8.ResultRecord.Remove(0, 1);
+                p9.ResultRecord = p9.ResultRecord.Remove(0, 1);
                 p7.ResultRecord += "W";
                 p8.ResultRecord += "W";
                 p9.ResultRecord += "W";
@@ -161,6 +170,9 @@ namespace ca2
             // Display players of the selected team
             if (selectedTeam == t1.Name)
             {
+                p1.ResultRecord = p1.ResultRecord.Remove(0, 1);
+                p2.ResultRecord = p2.ResultRecord.Remove(0, 1);
+                p3.ResultRecord = p3.ResultRecord.Remove(0, 1);
                 p1.ResultRecord += "D";
                 p2.ResultRecord += "D";
                 p3.ResultRecord += "D";
@@ -174,6 +186,9 @@ namespace ca2
             }
             else if (selectedTeam == t2.Name)
             {
+                p4.ResultRecord = p4.ResultRecord.Remove(0, 1);
+                p5.ResultRecord = p5.ResultRecord.Remove(0, 1);
+                p6.ResultRecord = p6.ResultRecord.Remove(0, 1);
                 p4.ResultRecord += "D";
                 p5.ResultRecord += "D";
                 p6.ResultRecord += "D";
@@ -187,6 +202,9 @@ namespace ca2
             }
             else if (selectedTeam == t3.Name)
             {
+                p7.ResultRecord = p7.ResultRecord.Remove(0, 1);
+                p8.ResultRecord = p8.ResultRecord.Remove(0, 1);
+                p9.ResultRecord = p9.ResultRecord.Remove(0, 1);
                 p7.ResultRecord += "D";
                 p8.ResultRecord += "D";
                 p9.ResultRecord += "D";
@@ -208,6 +226,9 @@ namespace ca2
             // Display players of the selected team
             if (selectedTeam == t1.Name)
             {
+                p1.ResultRecord = p1.ResultRecord.Remove(0, 1);
+                p2.ResultRecord = p2.ResultRecord.Remove(0, 1);
+                p3.ResultRecord = p3.ResultRecord.Remove(0, 1);
                 p1.ResultRecord += "L";
                 p2.ResultRecord += "L";
                 p3.ResultRecord += "L";
@@ -221,6 +242,9 @@ namespace ca2
             }
             else if (selectedTeam == t2.Name)
             {
+                p4.ResultRecord = p4.ResultRecord.Remove(0, 1);
+                p5.ResultRecord = p5.ResultRecord.Remove(0, 1);
+                p6.ResultRecord = p6.ResultRecord.Remove(0, 1);
                 p4.ResultRecord += "L";
                 p5.ResultRecord += "L";
                 p6.ResultRecord += "L";
@@ -234,6 +258,9 @@ namespace ca2
             }
             else if (selectedTeam == t3.Name)
             {
+                p7.ResultRecord = p7.ResultRecord.Remove(0, 1);
+                p8.ResultRecord = p8.ResultRecord.Remove(0, 1);
+                p9.ResultRecord = p9.ResultRecord.Remove(0, 1);
                 p7.ResultRecord += "L";
                 p8.ResultRecord += "L";
                 p9.ResultRecord += "L";
