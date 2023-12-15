@@ -7,20 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="LBXTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="69,144,562,144" SelectionChanged="LBXTeams_SelectionChanged"/>
-        <ListBox x:Name="LBXPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="451,144,135,153"/>
-        <Button x:Name="BTNWin" Content="win" Margin="679,323,18,92" Click="BTNWin_Click"/>
-        <Button x:Name="BTNLose" Content="lose" Margin="679,275,18,140" Click="BTNLose_Click"/>
-        <Button x:Name="BTNDraw" Content="draw" Margin="679,299,18,116" Click="BTNDraw_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="694,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Record Result"/><LineBreak/><Run/></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="LBXTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="69,144,0,0" SelectionChanged="LBXTeams_SelectionChanged" Height="146" VerticalAlignment="Top" HorizontalAlignment="Left" Width="169" Grid.RowSpan="2"/>
+        <ListBox x:Name="LBXPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="451,144,0,0" Height="137" VerticalAlignment="Top" HorizontalAlignment="Left" Width="214" Grid.RowSpan="2" SelectionChanged="LBXPlayers_SelectionChanged"/>
+        <Button x:Name="BTNWin" Content="win" Margin="679,106,0,0" Click="BTNWin_Click" HorizontalAlignment="Left" Width="103" Height="19" VerticalAlignment="Top" Grid.Row="1"/>
+        <Button x:Name="BTNLose" Content="lose" Margin="679,58,0,0" Click="BTNLose_Click" HorizontalAlignment="Left" Width="103" Height="19" VerticalAlignment="Top" Grid.Row="1"/>
+        <Button x:Name="BTNDraw" Content="draw" Margin="679,82,0,0" Click="BTNDraw_Click" HorizontalAlignment="Left" Width="103" Height="19" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock Margin="694,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72" Grid.Row="1"><Run Text="Record Result"/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="694,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Player Rating"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="451,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Players"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="69,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Teams"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="129,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="110" Width="512" FontSize="46"><Run Text="TiddlyWinks World"/><Run Language="en-gb" Text=" "/><Run Text="Cup"/></TextBlock>
-        <Image Height="100" Width="100" Margin="679,139,21,195"/>
-        <Image Margin="746,189,22,213" Source="/staroutline.png" Stretch="Fill"/>
-        <Image Margin="714,189,54,213" Source="/starsolid.png" Stretch="Fill"/>
-        <Image Margin="682,189,86,213" Source="/starsolid.png" Stretch="Fill"/>
+        <TextBlock Margin="129,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="110" FontSize="46" HorizontalAlignment="Left" Width="512"><Run Text="TiddlyWinks World"/><Run Language="en-gb" Text=" "/><Run Text="Cup"/></TextBlock>
+        <Image x:Name="IMGStars" Margin="679,151,11,26" Source="/images/0S.jpg" Stretch="Fill"/>
 
     </Grid>
 </Window>

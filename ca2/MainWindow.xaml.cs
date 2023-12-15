@@ -42,6 +42,11 @@ namespace ca2
         Player p8 = new Player() { Name = "Jose", ResultRecord = "LLLLL", Rating = 0 };
         Player p9 = new Player() { Name = "Pablo", ResultRecord = "DDDDD", Rating = 0 };
 
+        string ZeroStarImg = "images/0S.jpg";
+        string OneStarImg = "images/1S.jpg";
+        string TwoStarImg = "images/2S.jpg";
+        string ThreeStarImg = "images/3S.jpg";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -449,6 +454,25 @@ namespace ca2
                 {
                     LBXPlayers.Items.Add(player.Name + " - " + player.ResultRecord + " - " + player.Rating);
                 }
+            }
+        }
+
+        private void LBXPlayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedPlayer = LBXPlayers.SelectedItem as string;
+
+            // Display players of the selected team
+            if (selectedPlayer == p1.Name)
+            {
+                if (p1.Rating == 0)
+                    IMGStars.Source = new BitmapImage(new Uri(ZeroStarImg));
+                else if (p1.Rating >= 1 && p1.Rating <= 5)
+                    IMGStars.Source = new BitmapImage(new Uri(OneStarImg));
+                else if (p1.Rating >= 6 && p1.Rating <= 10)
+                    IMGStars.Source = new BitmapImage(new Uri(TwoStarImg));
+                else
+                    IMGStars.Source = new BitmapImage(new Uri(ThreeStarImg));
+
             }
         }
     }
